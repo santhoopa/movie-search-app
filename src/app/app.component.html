@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,6 +16,34 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
+<div class="container">
+  <div class="jumbotron" >
+  <h1 class="display-4  text-center">Movie Search App</h1>  </div>
 
-<router-outlet></router-outlet>
+ <div class="row" style="padding-bottom:50px; padding-left:200px">
+  <div class="col-6">
+          <input #searchWord type="text" class="form-control" placeholder="Search For Movies">
+  </div>
+    <button  (click)="onSearch(searchWord.value)"  class="btn btn-success">Search</button>
+
+ </div>
+
+
+  <div class="container" style="padding-left:300px; padding-bottom: 20px" *ngFor="let movie of moviesList">
+    <div class="card" style="width: 18rem;">
+      <img src="{{movie.Poster}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.Title}}</h5>
+        <h6 class="card-title">Type: {{movie.Type}}</h6>
+        <h6 class="card-title">Year: {{movie.Year}}</h6>
+        <h6 class="card-title">imdbID: {{movie.imdbID}}</h6>
+
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-home></app-home> -->
+<!-- <router-outlet></router-outlet> -->
